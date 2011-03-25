@@ -1,8 +1,8 @@
 CC = gcc
 INCLUDE = /usr/include
-LDLIBS = -lglut -lGL -lGLU -lX11 -lGLEW -lm -L/usr/lib
+LDLIBS = -lglut -lGL -lGLU -lX11 -lGLEW -ltiff -lm -L/usr/lib
 TARGETS =  vsvr
-OBJS =  vsvr.o main.o
+OBJS =  vsvr.o main.o tiff_io.o
 all: $(TARGETS)
 
 $(TARGETS): $(OBJS)
