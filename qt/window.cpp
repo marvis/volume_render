@@ -110,5 +110,16 @@ void Window::keyPressEvent(QKeyEvent *e)
 
 void Window::on_button_clicked()
 {
-	QMessageBox::information(this,"","button clicked!");
+	QString file = editor->text();
+	if(file != QString("") && file != QString("(open 3d tiff image)"))
+	{
+	}
+	else
+	{
+		file = QFileDialog::getOpenFileName(this,
+				      tr("Open TIFF Image"), "", tr("Image Files (*.tif *.tiff)"));
+		editor->setText(file);
+	}
+	
+	QMessageBox::information(this,"",tr("Open %1").arg(file));
 }
