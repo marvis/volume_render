@@ -3,11 +3,16 @@ INCLUDEPATH += ../shared
 
 HEADERS       = glwidget.h \
                 window.h \
-                qtlogo.h
+                qtlogo.h \
+				vsvr.h \
+				tiff_io.h
 SOURCES       = glwidget.cpp \
                 main.cpp \
                 window.cpp \
-                qtlogo.cpp
+                qtlogo.cpp \
+				vsvr.cpp \
+				tiff_io.cpp
+LIBS += -ltiff -lGLEW
 QT           += opengl
 
 # install

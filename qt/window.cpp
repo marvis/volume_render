@@ -121,5 +121,5 @@ void Window::on_button_clicked()
 		editor->setText(file);
 	}
 	
-	QMessageBox::information(this,"",tr("Open %1").arg(file));
+	this->glWidget->loadTiff(file);
 }

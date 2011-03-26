@@ -38,6 +38,8 @@
 **
 ****************************************************************************/
 
+#include "vsvr.h"
+
 #ifndef GLWIDGET_H
 #define GLWIDGET_H
 
@@ -56,6 +58,9 @@ public:
 
     QSize minimumSizeHint() const;
     QSize sizeHint() const;
+
+	void loadTiff(QString);
+	void draw_cube();
 //! [0]
 
 //! [1]
@@ -88,6 +93,24 @@ private:
     QPoint lastPos;
     QColor qtGreen;
     QColor qtPurple;
+
+
+	VSVR vsvr;
+
+	int tex_ni;
+	int tex_nj;
+	int tex_nk;
+
+	float* tex;
+
+	float xmin;
+	float xmax;
+	float ymin;
+	float ymax;
+	float zmin;
+	float zmax;
+
+	bool force_reload;
 };
 //! [3]
 
