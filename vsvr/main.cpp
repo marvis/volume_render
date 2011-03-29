@@ -1,6 +1,5 @@
 #include "vsvr.h"
 #include "tiff_io.h"
-#include "colormaps.h"
 
 #include <GL/glew.h>
 #include <GL/glut.h>
@@ -8,6 +7,16 @@
 #include <string>
 #include <stdio.h>
 using namespace std;
+
+#define ESCAPE 27
+#define PAGE_UP 73
+#define PAGE_DOWN 81
+#define UP_ARROW 72
+#define DOWN_ARROW 80
+#define LEFT_ARROW 75
+#define RIGHT_ARROW 77
+
+bool blend = false;
 
 int tex_ni = 0;
 int tex_nj = 0;
@@ -22,6 +31,12 @@ float zmin = -20;
 float zmax = 20;
 string infile;
 bool force_reload = false;
+
+float xrot = 0.0f;
+float yrot = 0.0f;
+float zrot = 0.0f;
+float scale = 1.1f;
+
 void init()
 {
 	//---------------------------------------------//
@@ -34,7 +49,7 @@ void init()
 	}
 	
 	glEnable( GL_DEPTH_TEST);
-	glClearColor(0,0,0, 0.5);
+	glClearColor(25.0f/255.f,25.f/255.f,63.f/255.f, 38.f/255.f);
 	glDisable(GL_TEXTURE_2D);
 
 	unsigned char* img = readtiff((char*)infile.c_str(), &tex_ni, &tex_nj, &tex_nk, &CHANNELS);
@@ -48,43 +63,32 @@ void init()
 
 	vsvr.tex_set_intern();
 	vsvr.tex_set_resolution(tex_ni, tex_nj, tex_nk);
-	vsvr.tex_alloc();
 
-	// copy the texture
-	for( int i = 0 ; i < tex_ni ; ++i )
+	float * tex = new float[tex_ni * tex_nj * tex_nk * 4];
+	for(int i = 0; i < tex_ni * tex_nj * tex_nk ; i++)
 	{
-		for( int j = 0 ; j < tex_nj ; ++j )
+		if(CHANNELS == 1)
 		{
-			for( int k = 0 ; k < tex_nk ; ++k )
-			{
-				vsvr.tex_set( i,j,k, (float)img[k * tex_ni * tex_nj + j * tex_ni + i]/255.0) ;
-			}
+			tex[4*i] = img[i] / 255.0f;
+			tex[4*i+1] = img[i] / 255.0f;
+			tex[4*i+2] = img[i] / 255.0f;
+			tex[4*i+3] = img[i] / 255.0f;
+
+		}
+		else if(CHANNELS == 3)
+		{
+			tex[4*i] = img[3*i] / 255.0f;
+			tex[4*i+1] = img[3*i+1] / 255.0f;
+			tex[4*i+2] = img[3*i+2] / 255.0f;
+			tex[4*i+3] = (tex[4*i] + tex[4*i+1] + tex[4*i+2])/3.0f;
 		}
 	}
-
+	
+	vsvr.tex_set_extern(tex);
 	delete img;
 	force_reload = true;
 	printf( "read texture %s of resolution %dx%dx%d and bbox (%.2f,%.2f)x(%.2f,%.2f)x(%.2f,%.2f)\n", (const char*)infile.c_str(), tex_ni, tex_nj, tex_nk, xmin, xmax, ymin, ymax, zmin, zmax ) ;
 
-	//const float* colmap = color_jet;
-	const float* colmap = color_autumn;
-	int tf_size = 256;
-	vsvr.tf_set_intern();
-	vsvr.tf_set_size(tf_size);
-	vsvr.tf_alloc();
-
-	float x = 0.0f;
-	float dx = 1.0f/(tf_size - 1);
-	for(int i = 0; i < tf_size; ++i, x += dx)
-	{
-		int k = i;
-		float a = x;
-		const float * col = colmap + 3*k;
-		if(a < 0.0f) a = 0.0f;
-		if(a > 1.0f) a = 1.0f;
-
-		vsvr.tf_set(i, col[0], col[1], col[2], a*0.1);
-	}
 	force_reload = true;
 }
 
@@ -106,7 +110,8 @@ void draw_cube()
   ::glBegin(GL_LINES);
   {
     col = (viewer[1]>0 && viewer[2]>0)? 0.4f : 1 ;
-    ::glColor3f(col,0,0);
+    //::glColor3f(col,0,0);
+    ::glColor3f(1.0,0,0);
     ::glVertex3f(xmin                 ,ymin,zmin); // e0
     ::glVertex3f(xmax+0.1f*(xmax-xmin),ymin,zmin); // e1
 
@@ -178,7 +183,10 @@ void display()
 	glLoadIdentity();
 	
 	glTranslatef(0.0, 0.0, 0.0);
-
+	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
+	yrot += 1.0f;
+	glScalef(scale, scale, scale);
+	scale *= 1.001f;
 	// draw the cube
 	draw_cube();
 
@@ -225,6 +233,27 @@ void reshape(int wid, int ht)
 
 void key(unsigned char key, int x, int y)
 {
+	usleep(100);
+	switch(key)
+	{
+		case ESCAPE:
+			glutDestroyWindow(NULL);
+			exit(1);
+			break;
+		case 98:
+		case 130:
+			printf("B/b pressed; blending is : %d\n", blend);
+			blend = blend ? 0 : 1;
+			if(!blend){
+				glDisable(GL_BLEND);
+				glEnable(GL_DEPTH_TEST);
+			}
+			else 
+			{
+				glEnable(GL_BLEND);
+				glDisable(GL_DEPTH_TEST);
+			}
+	}
 }
 
 /**********************************************
@@ -253,6 +282,7 @@ int main(int argc, char* argv[])
 	init();
 
 	glutDisplayFunc(display);
+	glutIdleFunc(display);
 	glutReshapeFunc(reshape);
 	glutMouseFunc(mouse);
 	glutMotionFunc(motion);

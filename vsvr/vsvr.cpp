@@ -32,7 +32,7 @@
 bool VSVR::gl_render( int nslices /*= tex_ni()*/ )
 //-----------------------------------------------------------------------------
 {
-  if( !_tex || !_tf ) return false ;
+  if( !_tex ) return false ;
 
   if( _rescale ) tex_rescale() ;
 
@@ -54,7 +54,7 @@ bool VSVR::gl_render( int nslices /*= tex_ni()*/ )
 bool VSVR::gl_redisplay( int nslices /*= tex_ni()*/ ) const
 //-----------------------------------------------------------------------------
 {
-  if( !_tex || !_tf ) return false ;
+  if( !_tex) return false ;
 
   // sets the openGL attributes and clipping planes
   gl_set () ;
@@ -207,7 +207,7 @@ bool VSVR::tex_glload()
     (int) tex_nj(),                     // height
     (int) tex_nk(),                     // depth
     0,                                  // border
-    GL_COLOR_INDEX,                     // format
+    GL_RGBA,                     // format
     GL_FLOAT,                           // type
     _tex            );                  // buffer
 
@@ -224,6 +224,7 @@ bool VSVR::tex_glload()
 bool VSVR::tf_glload() const
 //-----------------------------------------------------------------------------
 {
+	return true;
   ::glPixelTransferi(GL_MAP_COLOR  , GL_TRUE);
 
   float *ptr = _tf ;
