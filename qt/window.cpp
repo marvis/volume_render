@@ -122,4 +122,5 @@ void Window::on_button_clicked()
 	}
 	
 	this->glWidget->loadTiff(file);
+	this->glWidget->updateGL();
 }

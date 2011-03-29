@@ -56,6 +56,7 @@ public:
     GLWidget(QWidget *parent = 0);
     ~GLWidget();
 
+	void reSetView();
     QSize minimumSizeHint() const;
     QSize sizeHint() const;
 
@@ -82,14 +83,18 @@ protected:
     void resizeGL(int width, int height);
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
+	void wheelEvent(QWheelEvent *event);
 //! [2]
 
 //! [3]
 private:
-    QtLogo *logo;
+    //QtLogo *logo;
     int xRot;
     int yRot;
     int zRot;
+	float xMove;
+	float yMove;
+	float scale;
     QPoint lastPos;
     QColor qtGreen;
     QColor qtPurple;

@@ -50,7 +50,6 @@
 #include <math.h>
 
 #include "glwidget.h"
-#include "qtlogo.h"
 
 #ifndef GL_MULTISAMPLE
 #define GL_MULTISAMPLE  0x809D
@@ -60,10 +59,13 @@
 GLWidget::GLWidget(QWidget *parent)
     : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
 {
-    logo = 0;
+    //logo = 0;
     xRot = 0;
     yRot = 0;
     zRot = 0;
+	xMove = 0.0;
+	yMove = 0.0;
+	scale = 1.0;
 
     qtGreen = QColor::fromCmykF(0.40, 0.0, 1.0, 0.0);
     qtPurple = QColor::fromCmykF(0.39, 0.39, 0.0, 0.0);
@@ -89,6 +91,16 @@ GLWidget::~GLWidget()
 {
 }
 //! [1]
+
+void GLWidget::reSetView()
+{
+	xRot = 0;
+	yRot = 0;
+	zRot = 0;
+	xMove = 0.0;
+	yMove = 0.0;
+	scale = 1.0;
+}
 
 //! [2]
 QSize GLWidget::minimumSizeHint() const
@@ -150,17 +162,15 @@ void GLWidget::initializeGL()
 {
     qglClearColor(qtPurple.dark());
 
-    logo = new QtLogo(this, 64);
-    logo->setColor(qtGreen.dark());
-
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
-    glShadeModel(GL_SMOOTH);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
-    glEnable(GL_MULTISAMPLE);
-    static GLfloat lightPosition[4] = { 0.5, 5.0, 7.0, 1.0 };
-    glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+    //glShadeModel(GL_SMOOTH);
+	glShadeModel(GL_FLAT);
+    //glEnable(GL_LIGHTING);
+    //glEnable(GL_LIGHT0);
+    //glEnable(GL_MULTISAMPLE);
+    //static GLfloat lightPosition[4] = { 0.5, 5.0, 7.0, 1.0 };
+    //glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
 }
 //! [6]
 
@@ -169,7 +179,8 @@ void GLWidget::paintGL()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
-    glTranslatef(0.0, 0.0, -10.0);
+	glScalef(scale, scale, scale);
+    glTranslatef(xMove, yMove, -10.0);
     glRotatef(xRot / 16.0, 1.0, 0.0, 0.0);
     glRotatef(yRot / 16.0, 0.0, 1.0, 0.0);
     glRotatef(zRot / 16.0, 0.0, 0.0, 1.0);
@@ -195,7 +206,7 @@ void GLWidget::paintGL()
 	}
 	else
 	{
-    	logo->draw();
+    	//logo->draw();
 	}
 }
 //! [7]
@@ -205,6 +216,7 @@ void GLWidget::resizeGL(int width, int height)
 {
     int side = qMin(width, height);
     glViewport((width - side) / 2, (height - side) / 2, side, side);
+	//glViewport(0,0, width, height);
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -227,19 +239,29 @@ void GLWidget::mousePressEvent(QMouseEvent *event)
 //! [10]
 void GLWidget::mouseMoveEvent(QMouseEvent *event)
 {
-    int dx = event->x() - lastPos.x();
-    int dy = event->y() - lastPos.y();
 
     if (event->buttons() & Qt::LeftButton) {
+    	int dx = event->x() - lastPos.x();
+    	int dy = event->y() - lastPos.y();
         setXRotation(xRot + 8 * dy);
         setYRotation(yRot + 8 * dx);
     } else if (event->buttons() & Qt::RightButton) {
-        setXRotation(xRot + 8 * dy);
-        setZRotation(zRot + 8 * dx);
+		float ratio = 2.0/scale;
+		xMove += ratio * (float)(event->x() - lastPos.x())/this->size().width();
+		yMove -= ratio * (float)(event->y() - lastPos.y())/this->size().height();
+		updateGL();
     }
     lastPos = event->pos();
 }
 //! [10]
+
+void GLWidget::wheelEvent(QWheelEvent * event)
+{
+	int wheelSteps = event->delta() / 120;
+	scale = scale * pow(1.1,wheelSteps);
+	event->accept();
+	updateGL();
+}
 
 void GLWidget::loadTiff(QString file)
 {
