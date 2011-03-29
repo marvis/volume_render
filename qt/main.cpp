@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     Window window;
+	if(argc==2) window.loadTiff(argv[1]);
     window.resize(window.sizeHint());
     int desktopArea = QApplication::desktop()->width() *
                      QApplication::desktop()->height();

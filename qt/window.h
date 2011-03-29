@@ -56,7 +56,7 @@ class Window : public QWidget
 
 public:
     Window();
-
+	void loadTiff(QString);
 protected:
     void keyPressEvent(QKeyEvent *event);
 

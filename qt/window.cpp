@@ -124,3 +124,11 @@ void Window::on_button_clicked()
 	this->glWidget->loadTiff(file);
 	this->glWidget->updateGL();
 }
+
+void Window::loadTiff(QString file)
+{
+	QDir dir;
+	this->editor->setText(tr("%1/%2").arg(dir.absolutePath()).arg(file));
+	this->glWidget->loadTiff(file);
+	this->glWidget->updateGL();
+}
