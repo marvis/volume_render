@@ -1,0 +1,11 @@
+vsvr 
+1. render volume from command line input
+2. modified based on vsvr_puc
+
+qt 
+1. render volume from both graphical interface or command line 
+2. using qt library, extend from QGLWidget class
+
+volume 
+1. extract from opengl advanced rendering
+2. most of the code is similar to vsvr
