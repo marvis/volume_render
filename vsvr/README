@@ -1,0 +1,7 @@
+VSVR is modified from vsvr_puc
+
+All the buttons are delete, the parameter can be passed only from commandline.
+
+For example : ./vsvr frame0001.tif
+
+Both grayscale and RGB uncompressed tiff image are available.
