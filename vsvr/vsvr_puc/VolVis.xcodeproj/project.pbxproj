@@ -1,0 +1,244 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B5AC6120D888B8B0039BE7F /* glui_mouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AC6040D888B8B0039BE7F /* glui_mouse.cpp */; };
+		0B5AC6130D888B8B0039BE7F /* glui_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AC6050D888B8B0039BE7F /* glui_main.cpp */; };
+		0B5AC6140D888B8B0039BE7F /* glui_draws.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AC6060D888B8B0039BE7F /* glui_draws.cpp */; };
+		0B5AC6150D888B8B0039BE7F /* vsvr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AC6070D888B8B0039BE7F /* vsvr.cpp */; };
+		0B5AC6160D888B8B0039BE7F /* glui_controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AC60A0D888B8B0039BE7F /* glui_controls.cpp */; };
+		0B5AC6170D888B8B0039BE7F /* fparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AC60C0D888B8B0039BE7F /* fparser.cpp */; };
+		0B5AC6190D888B8B0039BE7F /* glui_tf_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AC60E0D888B8B0039BE7F /* glui_tf_gen.cpp */; };
+		0B5AC61A0D888B8B0039BE7F /* glui_tex_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AC60F0D888B8B0039BE7F /* glui_tex_gen.cpp */; };
+		0B5AC61E0D888B920039BE7F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5AC61B0D888B920039BE7F /* OpenGL.framework */; };
+		0B5AC61F0D888B920039BE7F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5AC61C0D888B920039BE7F /* GLUT.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0B5AC6040D888B8B0039BE7F /* glui_mouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glui_mouse.cpp; sourceTree = "<group>"; };
+		0B5AC6050D888B8B0039BE7F /* glui_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glui_main.cpp; sourceTree = "<group>"; };
+		0B5AC6060D888B8B0039BE7F /* glui_draws.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glui_draws.cpp; sourceTree = "<group>"; };
+		0B5AC6070D888B8B0039BE7F /* vsvr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vsvr.cpp; sourceTree = "<group>"; };
+		0B5AC6080D888B8B0039BE7F /* vsvr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vsvr.h; sourceTree = "<group>"; };
+		0B5AC6090D888B8B0039BE7F /* glui_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glui_defs.h; sourceTree = "<group>"; };
+		0B5AC60A0D888B8B0039BE7F /* glui_controls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glui_controls.cpp; sourceTree = "<group>"; };
+		0B5AC60B0D888B8B0039BE7F /* fparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fparser.h; sourceTree = "<group>"; };
+		0B5AC60C0D888B8B0039BE7F /* fparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fparser.cpp; sourceTree = "<group>"; };
+		0B5AC60E0D888B8B0039BE7F /* glui_tf_gen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glui_tf_gen.cpp; sourceTree = "<group>"; };
+		0B5AC60F0D888B8B0039BE7F /* glui_tex_gen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glui_tex_gen.cpp; sourceTree = "<group>"; };
+		0B5AC6100D888B8B0039BE7F /* csg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = csg.h; sourceTree = "<group>"; };
+		0B5AC6110D888B8B0039BE7F /* colormaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = colormaps.h; sourceTree = "<group>"; };
+		0B5AC61B0D888B920039BE7F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		0B5AC61C0D888B920039BE7F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
+		8DD76F6C0486A84900D96B5E /* VolVis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VolVis; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B5AC61E0D888B920039BE7F /* OpenGL.framework in Frameworks */,
+				0B5AC61F0D888B920039BE7F /* GLUT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* VolVis */ = {
+			isa = PBXGroup;
+			children = (
+				0B5AC61B0D888B920039BE7F /* OpenGL.framework */,
+				0B5AC61C0D888B920039BE7F /* GLUT.framework */,
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = VolVis;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0B5AC6040D888B8B0039BE7F /* glui_mouse.cpp */,
+				0B5AC6050D888B8B0039BE7F /* glui_main.cpp */,
+				0B5AC6060D888B8B0039BE7F /* glui_draws.cpp */,
+				0B5AC6070D888B8B0039BE7F /* vsvr.cpp */,
+				0B5AC6080D888B8B0039BE7F /* vsvr.h */,
+				0B5AC6090D888B8B0039BE7F /* glui_defs.h */,
+				0B5AC60A0D888B8B0039BE7F /* glui_controls.cpp */,
+				0B5AC60B0D888B8B0039BE7F /* fparser.h */,
+				0B5AC60C0D888B8B0039BE7F /* fparser.cpp */,
+				0B5AC60E0D888B8B0039BE7F /* glui_tf_gen.cpp */,
+				0B5AC60F0D888B8B0039BE7F /* glui_tex_gen.cpp */,
+				0B5AC6100D888B8B0039BE7F /* csg.h */,
+				0B5AC6110D888B8B0039BE7F /* colormaps.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* VolVis */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* VolVis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "VolVis" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VolVis;
+			productInstallPath = "$(HOME)/bin";
+			productName = VolVis;
+			productReference = 8DD76F6C0486A84900D96B5E /* VolVis */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "VolVis" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* VolVis */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* VolVis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B5AC6120D888B8B0039BE7F /* glui_mouse.cpp in Sources */,
+				0B5AC6130D888B8B0039BE7F /* glui_main.cpp in Sources */,
+				0B5AC6140D888B8B0039BE7F /* glui_draws.cpp in Sources */,
+				0B5AC6150D888B8B0039BE7F /* vsvr.cpp in Sources */,
+				0B5AC6160D888B8B0039BE7F /* glui_controls.cpp in Sources */,
+				0B5AC6170D888B8B0039BE7F /* fparser.cpp in Sources */,
+				0B5AC6190D888B8B0039BE7F /* glui_tf_gen.cpp in Sources */,
+				0B5AC61A0D888B8B0039BE7F /* glui_tex_gen.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = VolVis;
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = VolVis;
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lglui",
+					"-lglew",
+				);
+				PREBINDING = NO;
+				SDKROOT = "";
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lglui",
+					"-lglew",
+				);
+				PREBINDING = NO;
+				SDKROOT = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "VolVis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "VolVis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

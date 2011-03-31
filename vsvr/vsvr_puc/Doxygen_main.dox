@@ -1,0 +1,146 @@
+/**
+ * \mainpage
+ * 
+ * 
+ * 
+ * \section sec1 Author
+ * 
+ * Thomas Lewiner.
+ * 
+ * 
+ * 
+ * \section sec2 Introduction
+ * 
+ *   This source code illustrates the VSVR technique for 
+ * volume rendering. It intends to be as simple as possible,
+ * and require only minimal hardware, namely openGL 1.1 compatible
+ * graphic cards.
+ * 
+ * 
+ * 
+ * \section sec3 Requirements
+ * 
+ * -  The openGL functions require a graphic card with 3D textures.
+ * 
+ * -  The graphical interfaces require the openGL libraries with the GLU,
+ * glut and glui extension, available at:
+ * 	http://glui.sourceforge.net/
+ * 
+ *   The glui library we used is 2.2.
+ * 
+ * -  We use only one openGL extensions: 3D texture. The address of this
+ * extension is retrieved by GLew, the OpenGL Extension Wrangler Library,
+ * available at:
+ *         http://glew.sourceforge.net/
+ * 
+ * 
+ * \section sec4 Installation with the Makefile
+ * 
+ * The make file has 2 targets for vsvr: in debug mode (vsvrd) with -g -ggdb,
+ * and in release mode -O3 (vsvr). Just type 'make', 'make deb' or 'make vsvrd'
+ * for the debug mode, and 'make rel' or 'make vsvr' for the release mode.
+ * 
+ * 
+ * \section sec5 Usage
+ * 
+ * \subsection subsec51 Right panel:
+ * 
+ * The vsvr program reads several kinds of inputs in the "Texture" rollout:
+ * volumetric files in RAW, ISO or VOL format, predefined or user-defined
+ * implicit functions and CSG trees.
+ * 
+ * Each of these input fill a 3D texture, whose size is either read from
+ * the input file, or specified by the user in the ni, nj and nk text boxes.
+ * For the RAW format, the sizes must be specified _before_ opening the RAW
+ * file (button "Open RAW").
+ * 
+ * Further position and scale of the texture can be set through the "Position"
+ * rollout.
+ * 
+ * The screen can be captured using the "Save PPM" button, and the input can
+ * be converted into an ISO texture using the "Save ISO" button. The viewport
+ * can be saved to and loaded from file "viewport.txt" using buttons "Save View"
+ * and "Load View".
+ * 
+ * \subsection subsec52 Bottom panel:
+ * 
+ * The camera can be controlled using the usual trackballs in the main
+ * window or using the corresponding controls of the bottom panel.
+ * 
+ * The elements to be displayed can be selected as:
+ * () "Orho"     : use orthographic projection instead of perspective one.
+ * () "Cube"     : display the texture bounding box
+ * () "Grid"     : display the texture resolution on the cube
+ * () "Transfer" : display the actual transfer function
+ * 
+ * The transfer function is defined by a color map and an opacity function.
+ * The color map can be reverted or symmetrised. The user can use a predefined
+ * opacity function or type its own formula for it.
+ * 
+ * The opacity function is multiplied by the "Opacity factor". The opacity
+ * is further altered by the number of slices used for rendering the texture,
+ * which can be set for the final image using the "Nslices static" text box and
+ * for interactive image using the "Nslices motion" text box.
+ * 
+ * 
+ * 
+ * \section sec6 Command line
+ * 
+ * ./vsvr
+ *   [-ii file.iso] [-iv file.vol] [-ir file.raw]   # file input
+ *   [-ic file.csg] [-tx "implicit fun(x,y,z)"]     # csg and implicit function input
+ *   [-tf "trans fun(x)"]                           # opacity function input
+ *   [-cl colmap] [[-+]tfi] [[-+]tfs]               # colormap (inverted, symmetrized)
+ *   [-to "opa fun(x)"] [-of opacity]               # opacity function and opacity factor
+ *   [-r[xyz] res]                                  # texture resolution
+ *   [-m[xyz] min] [-M[xyz] max]                    # position of the texture
+ *   [-lv]                                          # load view from file "viewport.txt"
+ *   [-ns nslices] [-nm nslices]                    # number of slices for static/in motion rendering
+ *   [-op file.ppm] [-oi file.iso]                  # outputs to image and texture
+ *   [-q]                                           # immediate quit (useful for conversion usage)
+ * 
+ * 
+ * \section sec7 File format and conversion
+ * 
+ *   Usual data sets come in RAW format, while the prefered format for
+ * the VSVR example is ISO. In order to convert a model in raw format to
+ * iso, you can use the following command line for the "engine" example
+ * (the position parameters -mx... are optional):
+ * 
+ *   ./vsvr  -rx 256 -ry 256 -rz 128  -mx -1.0 -Mx 1.0 -my -1.0 -My 1.0 -mz -1.0 -Mz 1.0  -ir engine.raw  -oi engine.iso -q
+ * 
+ *   A small conversion utility reduce the iso resolution "iso_change_res".
+ * In order to display textures too large 
+ * 
+ * 
+ * \section sec8 Implementation
+ * 
+ *   The VSVR algorithm is implemented as described in the paper.
+ * The function parser is the one of Warp :
+ * http://warp.povusers.org/FunctionParser/
+ * 
+ *   The code is written with the 3D_Ext texture target, but may be changed
+ * to simple 3D texture targets by replacing in file vsvr.cpp "_EXT" by ""
+ * and "3DExt" by "3D". Without the 3D_Ext extension, the texture's sizes
+ * must be powers of 2. Some default GLU libraries on MS Windows system are
+ * particularly slow, which harms the interactivity of the rendering. This
+ * can be solved recompiling it, or retrieving a decent library.
+ * 
+ *   The class VSVR may be used in other applications, using functions similar to
+ * "tex_set_formula" (file glui_tex_gen) and "tf_set_formula" (file glui_tf_gen)
+ * for setting the texture and the transfer function. The texture is then displayed
+ * using VSVR::gl_render and redisplayed using VSVR::gl_redisplay.
+ * 
+ *   Huge textures can be loaded by instantiating several VSVR classes, displaying
+ * them at their respective positions.
+ * 
+ *   You may use the code for your applications freely. We just ask you to cite
+ * the paper for any kind of publication or reselling that uses the code.
+ * 
+ * 
+ * 
+ * Have fun!
+ * 
+ *   Tomlew.
+ * 
+ */

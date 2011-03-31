@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = 0B5AC5FE0D888B7F0039BE7F /* VolVis */;
+		activeTarget = 8DD76F620486A84900D96B5E /* VolVis */;
+		addToTargets = (
+			8DD76F620486A84900D96B5E /* VolVis */,
+		);
+		codeSenseManager = 0B5AC6030D888B850039BE7F /* Code sense */;
+		executables = (
+			0B5AC5FE0D888B7F0039BE7F /* VolVis */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					882,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					994,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					324,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 295719102;
+			PBXWorkspaceStateSaveDate = 295719102;
+		};
+		perUserProjectItems = {
+			0BEC9CFF11A052730003E38F /* PBXTextBookmark */ = 0BEC9CFF11A052730003E38F /* PBXTextBookmark */;
+			0BEC9D0011A052730003E38F /* PBXTextBookmark */ = 0BEC9D0011A052730003E38F /* PBXTextBookmark */;
+			0BEC9D0111A052730003E38F /* PBXTextBookmark */ = 0BEC9D0111A052730003E38F /* PBXTextBookmark */;
+			0BEC9D0211A052730003E38F /* PBXTextBookmark */ = 0BEC9D0211A052730003E38F /* PBXTextBookmark */;
+			0BEC9D1711A053020003E38F /* PBXTextBookmark */ = 0BEC9D1711A053020003E38F /* PBXTextBookmark */;
+			0BEC9D2311A0532D0003E38F /* PBXTextBookmark */ = 0BEC9D2311A0532D0003E38F /* PBXTextBookmark */;
+			0BEC9D3411A053860003E38F /* PBXTextBookmark */ = 0BEC9D3411A053860003E38F /* PBXTextBookmark */;
+			0BEC9D3A11A053910003E38F /* PBXTextBookmark */ = 0BEC9D3A11A053910003E38F /* PBXTextBookmark */;
+		};
+		sourceControlManager = 0B5AC6020D888B850039BE7F /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	0B5AC5FE0D888B7F0039BE7F /* VolVis */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = VolVis;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		startupPath = "<<ProjectDirectory>>";
+		variableFormatDictionary = {
+		};
+	};
+	0B5AC6020D888B850039BE7F /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "svn puc";
+			};
+		};
+	};
+	0B5AC6030D888B850039BE7F /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	0B5AC6040D888B8B0039BE7F /* glui_mouse.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {482, 2856}}";
+			sepNavSelRange = "{375, 0}";
+			sepNavVisRange = "{274, 331}";
+		};
+	};
+	0B5AC6050D888B8B0039BE7F /* glui_main.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2329, 3731}}";
+			sepNavSelRange = "{2097, 14}";
+			sepNavVisRange = "{1651, 870}";
+		};
+	};
+	0B5AC6060D888B8B0039BE7F /* glui_draws.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1172, 6500}}";
+			sepNavSelRange = "{13001, 0}";
+			sepNavVisRange = "{11184, 794}";
+		};
+	};
+	0B5AC6070D888B8B0039BE7F /* vsvr.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1172, 4680}}";
+			sepNavSelRange = "{6408, 0}";
+			sepNavVisRange = "{5795, 1268}";
+		};
+	};
+	0B5AC6090D888B8B0039BE7F /* glui_defs.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 3783}}";
+			sepNavSelRange = "{2709, 0}";
+			sepNavVisRange = "{2546, 408}";
+			sepNavWindowFrame = "{{176, 468}, {750, 558}}";
+		};
+	};
+	0B5AC60A0D888B8B0039BE7F /* glui_controls.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1172, 3562}}";
+			sepNavSelRange = "{10433, 0}";
+			sepNavVisRange = "{9671, 1464}";
+		};
+	};
+	0B5AC60C0D888B8B0039BE7F /* fparser.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {691, 44394}}";
+			sepNavSelRange = "{552, 0}";
+			sepNavVisRange = "{0, 1012}";
+			sepNavWindowFrame = "{{38, 594}, {750, 558}}";
+		};
+	};
+	0B5AC60E0D888B8B0039BE7F /* glui_tf_gen.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1172, 2275}}";
+			sepNavSelRange = "{689, 0}";
+			sepNavVisRange = "{488, 549}";
+		};
+	};
+	0B5AC60F0D888B8B0039BE7F /* glui_tex_gen.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1391, 6526}}";
+			sepNavSelRange = "{14915, 0}";
+			sepNavVisRange = "{14131, 932}";
+		};
+	};
+	0BEC9CFF11A052730003E38F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0B5AC6060D888B8B0039BE7F /* glui_draws.cpp */;
+		name = "glui_draws.cpp: 469";
+		rLen = 0;
+		rLoc = 13001;
+		rType = 0;
+		vrLen = 794;
+		vrLoc = 11184;
+	};
+	0BEC9D0011A052730003E38F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0B5AC60F0D888B8B0039BE7F /* glui_tex_gen.cpp */;
+		name = "glui_tex_gen.cpp: 498";
+		rLen = 0;
+		rLoc = 14915;
+		rType = 0;
+		vrLen = 932;
+		vrLoc = 14131;
+	};
+	0BEC9D0111A052730003E38F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0B5AC60A0D888B8B0039BE7F /* glui_controls.cpp */;
+		name = "glui_controls.cpp: 270";
+		rLen = 0;
+		rLoc = 10433;
+		rType = 0;
+		vrLen = 1464;
+		vrLoc = 9671;
+	};
+	0BEC9D0211A052730003E38F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0B5AC6050D888B8B0039BE7F /* glui_main.cpp */;
+		name = "glui_main.cpp: 89";
+		rLen = 14;
+		rLoc = 2097;
+		rType = 0;
+		vrLen = 870;
+		vrLoc = 1651;
+	};
+	0BEC9D1711A053020003E38F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0B5AC6090D888B8B0039BE7F /* glui_defs.h */;
+		name = "glui_defs.h: 107";
+		rLen = 0;
+		rLoc = 2709;
+		rType = 0;
+		vrLen = 743;
+		vrLoc = 2394;
+	};
+	0BEC9D2311A0532D0003E38F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0B5AC60E0D888B8B0039BE7F /* glui_tf_gen.cpp */;
+		name = "glui_tf_gen.cpp: 34";
+		rLen = 0;
+		rLoc = 689;
+		rType = 0;
+		vrLen = 549;
+		vrLoc = 488;
+	};
+	0BEC9D3411A053860003E38F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0B5AC6070D888B8B0039BE7F /* vsvr.cpp */;
+		name = "vsvr.cpp: 203";
+		rLen = 0;
+		rLoc = 6408;
+		rType = 0;
+		vrLen = 711;
+		vrLoc = 6225;
+	};
+	0BEC9D3A11A053910003E38F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0B5AC6070D888B8B0039BE7F /* vsvr.cpp */;
+		name = "vsvr.cpp: 203";
+		rLen = 0;
+		rLoc = 6408;
+		rType = 0;
+		vrLen = 1268;
+		vrLoc = 5795;
+	};
+	8DD76F620486A84900D96B5E /* VolVis */ = {
+		activeExec = 0;
+		executables = (
+			0B5AC5FE0D888B7F0039BE7F /* VolVis */,
+		);
+	};
+}
